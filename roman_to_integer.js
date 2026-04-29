@@ -71,11 +71,9 @@ It is guaranteed that s is a valid roman numeral in the range [1, 3999].
 14
 15
 16
-17
 /**
  * @param {string}
  * @return {number}
- * testing leetcode same file overwrite
  */
 var romanToInt = function(s) {
     let value = {"I": 1, "V": 5, "X": 10, "L": 
