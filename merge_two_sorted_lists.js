@@ -37,31 +37,61 @@ The number of nodes in both lists is in the range [0, 50].
 Both list1 and list2 are sorted in non-decreasing order.
 */
 
-22
-21
-20
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
 18
 19
+20
+21
+22
 23
 24
 25
 26
-28
 27
-17
-16
-15
-                current.next = list2
-            }else{
-                current = current.next
+28
+29
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} list1
+ * @param {ListNode} list2
+ * @return {ListNode}
+ */
+var mergeTwoLists = function(list1, list2) {
+    let mergeList = new ListNode(0);
+    let current = mergeList;
+    while(list1 && list2){
+            if(list1.val < list2.val){
                 current.next = list1
                 list1 = list1.next
+                current = current.next
+            }else{
+                current.next = list2
                 list2 = list2.next
                 current = current.next
             }
     }
-    return mergeList.next;
     current.next = list1 || list2;
-            if(list1.val < list2.val){
-    while(list1 && list2){
-    let current = mergeList;
+    return mergeList.next;
+};
