@@ -59,6 +59,9 @@ n == nums.length
 3
 2
 1
+/**
+ * @return {number}
+ * @param {number[]} nums
  */
 var maxRotateFunction = function(nums) {
     for(let i = 0; i< nums.length; i++){
@@ -74,6 +77,3 @@ var maxRotateFunction = function(nums) {
     let max = f
         max = Math.max(max, f)
 };
- * @return {number}
- * @param {number[]} nums
-/**
