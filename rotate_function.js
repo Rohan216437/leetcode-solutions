@@ -60,20 +60,29 @@ n == nums.length
 2
 1
 /**
- * @return {number}
- * @param {number[]} nums
- */
-var maxRotateFunction = function(nums) {
-    for(let i = 0; i< nums.length; i++){
-    let sum = 0
-        sum += nums[i]
-        f += i * nums[i]
-    let f = 0
-    for(let k = 1; k<nums.length; k++){
-    }
-        f = f + sum - nums.length * nums[nums.length - k]
-    }
-    return max;
-    let max = f
-        max = Math.max(max, f)
+ * @param {number} n
+ * @return {number}
+ */
+var rotatedDigits = function(n) {
+    let count = 0;
+    for (let i = 1; i <= n; i++) {
+        let num = i;
+        let isValid = true;
+        let isChanged = false;
+        while (num > 0) {
+            let digit = num % 10;
+            if (digit === 3 || digit === 4 || digit === 7) {
+                isValid = false;
+                break;
+            }
+            if (digit === 2 || digit === 5 || digit === 6 || digit === 9) {
+                isChanged = true;
+            }
+            num = Math.floor(num / 10);
+        }
+        if (isValid && isChanged) {
+            count++;
+        }
+    }
+    return count;
 };
