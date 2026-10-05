@@ -38,39 +38,27 @@ Constraints:
 s consists of only '(' and ')'.
 s is a balanced parentheses string.
 */
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var scoreOfParentheses = function(s) {
+    let stack = [0]
 
-10
-11
-12
-13
-14
-15
-16
-17
-18
-19
-20
-21
-22
-23
-9
-8
-7
-6
-5
-        if (s[i] == "("){
-            stack.push(0)
-        }else{
-            inside = stack.pop()
-            if (inside == 0){
-                score = 1
-            }else{
-                score = 2 * inside
-            }
-            stack[stack.length - 1] += score
-        }
-    }
-    return stack[0]
-    for (let i = 0; i < s.length; i++){
-    let stack = [0]
-var scoreOfParentheses = function(s) {
+    for (let i = 0; i < s.length; i++){
+
+        if (s[i] == "("){
+            stack.push(0)
+        }else{
+            inside = stack.pop()
+
+            if (inside == 0){
+                score = 1
+            }else{
+                score = 2 * inside
+            }
+            stack[stack.length - 1] += score
+        }
+    }
+    return stack[0]
+};
